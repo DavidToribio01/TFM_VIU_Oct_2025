@@ -1,0 +1,35 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+.venv/
+.vscode/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+*.egg-info/
+# Sensitive / large experimental artifacts
+data/**
+!data/.gitkeep
+results/
+*.pkl
+*.pickle
+*.parquet
+*.npz
+*.jsonl
+*.csv
+!artifacts/evaluation/*.csv
+# Keep the audited small v3 checkpoint and metrics, exclude other weights
+*.pt
+!artifacts/model_v3/best_model.pt
+
+# Notebooks and local large assets
+*.ipynb_checkpoints/
+*.safetensors
+*.bin
+*.ckpt
+**/tokenizer_cache/
+
+# Historical notebooks containing absolute local paths: keep in source archives only
+notebooks/*_legacy/

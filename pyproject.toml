@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tfm-cognitive-bias-detector"
+version = "0.1.0"
+description = "Prototipo experimental de detección multietiqueta y alertas explicables"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy", "pandas", "torch", "transformers", "scikit-learn",
+    "shap", "pyarrow", "iterative-stratification", "pydantic>=2", "openai"
+]
+
+[project.optional-dependencies]
+notebooks = ["jupyterlab", "ipykernel", "matplotlib", "seaborn", "tiktoken"]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
